@@ -51,7 +51,7 @@ export default function Register() {
                 <input type="password" className="form-control"
                   name="password" id="password" value={register.password} onChange={changeField} placeholder="password" />
               </div>
-              <Link to="#" class="btn btn-default bg-diff radius-0">
+              <Link to="#" className="btn btn-default bg-diff radius-0">
                 Register
               </Link>
             </form>

@@ -1,32 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Productsingle(props) {
+const Productsingle = ({ product, addToCart }) => {
   return (
-    <>
-      <a className="productwrapper" to="/shop">
-        <div className="imbtwrapper">
-          <div className="imgwrapper">
-            <img src={props.Product.image} className="img-fluid" />
-          </div>
-          <div className="btnwrapper">
-            <Link className="btn btn-default bg-diff btn-sm" to="/shop">
-              Add to cart
-            </Link>
-            {/* <Link className="btn btn-default bg-diff btn-sm" to="/shop">
-              Add to cart
-            </Link> */}
-          </div>
+    <div className="productwrapper">
+      <div className="imbtwrapper">
+        <div className="imgwrapper">
+          <img src={product.imageUrl} className="img-fluid" alt={product.productName} />
         </div>
-        <div className="product-text">
-          <h6 className="brand">{props.Product.brand}</h6>
-          <h5 className="fw-bold mt-2 mb-3 title">{props.Product.name}</h5>
-          <div className="d-flex justify-content-between align-items-center">
-            <span className="price">{props.Product.price}</span>
-            <span className="review">{props.Product.reviews}</span>
-          </div>
+        <div className="btnwrapper">
+          <button className="btn btn-default bg-diff btn-sm" onClick={() => addToCart(product)}>
+            Add to cart
+          </button>
         </div>
-      </a>
-    </>
+      </div>
+      <div className="product-text">
+        <h6 className="brand">{product.brand}</h6>
+        {/* Specify the route path in the "to" prop */}
+        <Link to={`/product/${product.id}`}>
+          <h5 className="fw-bold mt-2 mb-3 title">{product.productName}</h5>
+        </Link>
+        <div className="d-flex justify-content-between align-items-center">
+          <span className="price">{product.price}</span>
+          {/* If "reviews" is available in the product object, display it */}
+          {product.reviews && <span className="review">{product.reviews}</span>}
+        </div>
+      </div>
+    </div>
   );
 }
+
+export default Productsingle;

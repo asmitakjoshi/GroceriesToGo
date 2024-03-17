@@ -5,7 +5,7 @@ export default function Productfilter(props) {
   return (
     <>
       <button
-        class="btn btn-outline-secondary mb-3 w-100 d-lg-none"
+        className="btn btn-outline-secondary mb-3 w-100 d-lg-none"
         type="button"
         data-mdb-toggle="collapse"
         data-mdb-target="#navbarSupportedContent"
@@ -16,12 +16,12 @@ export default function Productfilter(props) {
         <span>Show filter</span>
       </button>
 
-      <div class="collapse card d-lg-block mb-5" id="navbarSupportedContent">
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
+      <div className="collapse card d-lg-block mb-5" id="navbarSupportedContent">
+        <div className="accordion" id="accordionPanelsStayOpenExample">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingOne">
               <button
-                class="accordion-button text-dark bg-light"
+                className="accordion-button text-dark bg-light"
                 type="button"
                 data-mdb-toggle="collapse"
                 data-mdb-target="#panelsStayOpen-collapseOne"
@@ -33,15 +33,15 @@ export default function Productfilter(props) {
             </h2>
             <div
               id="panelsStayOpen-collapseOne"
-              class="accordion-collapse collapse show"
+              className="accordion-collapse collapse show"
               aria-labelledby="headingOne"
             >
-              <div class="accordion-body">
-                <ul class="list-unstyled">
+              <div className="accordion-body">
+                <ul className="list-unstyled">
                   {props.Products.map((Product, index) => {
                     return (
                       <li key={index}>
-                        <a href="#" class="text-dark">
+                        <a href="#" className="text-dark">
                           {Product}{" "}
                         </a>
                       </li>
@@ -52,131 +52,138 @@ export default function Productfilter(props) {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button
-              class="accordion-button text-dark bg-light"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#panelsStayOpen-collapseTwo"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseTwo"
+        <div className="accordion" id="accordionPanelsStayOpenExample">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingTwo">
+              <button
+                className="accordion-button text-dark bg-light"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                Brands
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              className="accordion-collapse collapse show"
+              aria-labelledby="headingTwo"
             >
-              Brands
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseTwo"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingTwo"
-          >
-            <div class="accordion-body">
-              <div>
-                {props.Brands.map((Brand, index) => {
-                  return (
-                    <div class="form-check" key={index}>
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="flexCheckChecked1"
-                        checked
-                      />
-                      <label class="form-check-label" for="flexCheckChecked1">
-                        {Brand}
-                      </label>
-                      <span class="badge badge-secondary float-end">120</span>
+              <div className="accordion-body">
+                <div>
+                  {props.Brands.map((Brand, index) => {
+                    return (
+                      <div className="form-check" key={index}>
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked1"
+                          checked
+                        />
+                        <label className="form-check-label" htmlFor="flexCheckChecked1">
+                          {Brand}
+                        </label>
+                        <span className="badge badge-secondary float-end">120</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="accordion" id="accordionPanelsStayOpenExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingThree">
+                <button
+                  className="accordion-button text-dark bg-light"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Price
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingThree"
+              >
+                <div className="accordion-body">
+                  <div className="range">
+                    <input type="range" className="form-range" id="customRange1" />
+                  </div>
+                  <div className="row mb-3">
+                    <div className="col-6">
+                      <p className="mb-0">Min</p>
+                      <div className="form-outline">
+                        <input type="number" id="typeNumber" className="form-control" />
+                        <label className="form-label" htmlFor="typeNumber">
+                          $0
+                        </label>
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button
-            class="accordion-button text-dark bg-light"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#panelsStayOpen-collapseThree"
-            aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseThree"
-          >
-            Price
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseThree"
-          class="accordion-collapse collapse show"
-          aria-labelledby="headingThree"
-        >
-          <div class="accordion-body">
-            <div class="range">
-              <input type="range" class="form-range" id="customRange1" />
-            </div>
-            <div class="row mb-3">
-              <div class="col-6">
-                <p class="mb-0">Min</p>
-                <div class="form-outline">
-                  <input type="number" id="typeNumber" class="form-control" />
-                  <label class="form-label" for="typeNumber">
-                    $0
-                  </label>
+                    <div className="col-6">
+                      <p className="mb-0">Max</p>
+                      <div className="form-outline">
+                        <input type="number" id="typeNumber" className="form-control" />
+                        <label className="form-label" htmlFor="typeNumber">
+                          $1,0000
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-white w-100 border border-secondary"
+                  >
+                    apply
+                  </button>
                 </div>
               </div>
-              <div class="col-6">
-                <p class="mb-0">Max</p>
-                <div class="form-outline">
-                  <input type="number" id="typeNumber" class="form-control" />
-                  <label class="form-label" for="typeNumber">
-                    $1,0000
-                  </label>
-                </div>
-              </div>
-            </div>
-            <button
-              type="button"
-              class="btn btn-white w-100 border border-secondary"
-            >
-              apply
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button
-            class="accordion-button text-dark bg-light"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#panelsStayOpen-collapseFive"
-            aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseFive"
-          >
-            Ratings
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseFive"
-          class="accordion-collapse collapse show"
-          aria-labelledby="headingThree"
-        >
-          <div class="accordion-body">
-            <div class="form-check">
-              {Array.from({ length: 5 }, (_, index) => (
-                <React.Fragment key={index}>
-                  <input class="form-check-input" type="checkbox" value="" id={`flexCheckDefault${index}`} checked />
-                  {[...Array(index + 1)].map((_, starIndex) => (
-                    <label key={starIndex} class="form-check-label" for={`flexCheckDefault${index}`}>
-                      <i class="fas fa-star text-warning"></i>
-                    </label>
-                  ))}
-                </React.Fragment>
-              ))}
-            </div>
 
+              <div className="accordion" id="accordionPanelsStayOpenExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingThree">
+                    <button
+                      className="accordion-button text-dark bg-light"
+                      type="button"
+                      data-mdb-toggle="collapse"
+                      data-mdb-target="#panelsStayOpen-collapseFive"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseFive"
+                    >
+                      Ratings
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFive"
+                    className="accordion-collapse collapse show"
+                    aria-labelledby="headingThree"
+                  >
+                    <div className="accordion-body">
+                      <div className="form-check">
+                        {Array.from({ length: 5 }, (_, index) => (
+                          <React.Fragment key={index}>
+                            <input className="form-check-input" type="checkbox" value="" id={`flexCheckDefault${index}`} checked />
+                            {[...Array(index + 1)].map((_, starIndex) => (
+                              <label key={starIndex} className="form-check-label" htmlFor={`flexCheckDefault${index}`}>
+                                <i className="fas fa-star text-warning"></i>
+                              </label>
+                            ))}
+                          </React.Fragment>
+                        ))}
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

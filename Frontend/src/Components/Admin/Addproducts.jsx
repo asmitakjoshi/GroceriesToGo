@@ -48,7 +48,7 @@ export default function Addproducts() {
           <div className="col-12">
             <form onSubmit={handleSubmit} className="form-container border p-3">
               <div className="mb-3">
-                <label htmlFor="imageUpload" className="form-label">Upload Product Image</label>
+                <label htmlhtmlFor="imageUpload" className="form-label">Upload Product Image</label>
                 <input
                   type="file"
                   className="form-control"
@@ -64,7 +64,7 @@ export default function Addproducts() {
               )}
 
               <div className="mb-3">
-                <label htmlFor="name" className="form-label">Product Name</label>
+                <label htmlhtmlFor="name" className="form-label">Product Name</label>
                 <input
                   type="text"
                   className="form-control"
@@ -75,7 +75,7 @@ export default function Addproducts() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="brand" className="form-label">Luggage Brand</label>
+                <label htmlhtmlFor="brand" className="form-label">Luggage Brand</label>
                 <input
                   type="text"
                   className="form-control"
@@ -86,7 +86,7 @@ export default function Addproducts() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="quantity" className="form-label">Quantity/ Weight</label>
+                <label htmlhtmlFor="quantity" className="form-label">Quantity/ Weight</label>
                 <input
                   type="text"
                   className="form-control"
@@ -109,7 +109,7 @@ export default function Addproducts() {
                 </select>
               </div>
               <div className="mb-3">
-                <label htmlFor="original_price" className="form-label d-flex">Price</label>
+                <label htmlhtmlFor="original_price" className="form-label d-flex">Price</label>
                 <input
                   type="text"
                   className="form-control"

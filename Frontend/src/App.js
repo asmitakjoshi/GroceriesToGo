@@ -1,9 +1,12 @@
+import React, { useState } from 'react';
 import './App.css';
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./Components/Client/Home";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Navbar from "./Components/Client/Navbar";
+import '../node_modules/bootstrap/dist/js/bootstrap.js';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './Components/css/style.css';
 import './Components/css/responsive.css';
 import Header from './Components/Client/Header';
@@ -12,11 +15,17 @@ import Footer from './Components/Client/Footer';
 import { About } from './Components/Client/About';
 import Cart from './Components/Client/Cart';
 import Productpage from './Components/Client/Productpage';
+import ProductDetails from './Components/Client/ProductDetails';
 import Addproducts from './Components/Admin/Addproducts';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.js';
+import Categorypage from './Components/Client/Categorypage.jsx';
+
 
 export default function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
   const location = useLocation()
   let header_title = '';
   let header_para = '';
@@ -44,20 +53,24 @@ export default function App() {
     <main>
       {/* {window.location.pathname !== "/login" && window.location.pathname !== "/register" && (
         <Navbar />)} */}
-      <Navbar />
+      <Navbar cart={cart} />
       {/* {window.location.pathname !== '/home' && (<Header />)} */}
-      {window.location.pathname !== "/home" && (<Header header_title={header_title} header_para={header_para} />)}
+      {window.location.pathname !== "/" && (<Header addToCart={addToCart} header_title={header_title} header_para={header_para} />)}
       <Routes>
-        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/" exact element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>} />
         <Route path="/products" element={<Productpage></Productpage>} />
+        <Route path="/product/:id" element={<ProductDetails addToCart={addToCart}></ProductDetails>} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<Cart  cart={cart}/>} />
         <Route path='/addproducts' element={<Addproducts />} />
+        <Route path='/categories' element={<Categorypage />} />
+
       </Routes>
       <Footer />
     </main>
   )
 }
+

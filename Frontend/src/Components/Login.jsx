@@ -66,7 +66,7 @@ export default function Login() {
                   checked={login.isAdmin}
                   onChange={changeField}
                 />
-                <label className="form-check-label" htmlFor="isAdmin">Login as admin</label>
+                <label className="form-check-label" htmlhtmlFor="isAdmin">Login as admin</label>
               </div>
               <button type="submit" className="btn btn-default bg-diff radius-0">Login</button>
             </form>
